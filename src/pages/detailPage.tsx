@@ -7,6 +7,8 @@ export const DetailPage = () => {
   const { pokemon } = useParams<{ pokemon: string }>();
 
   const [pokemonDetail, setPokemonDetail] = useState<IPokemonResponse>();
+  const urlPokemonNotFound =
+    "https://icon-library.com/images/pokeball-icon-transparent/pokeball-icon-transparent-28.jpg";
   const urlBase = "https://pokeapi.co/api/v2/pokemon/";
   const urlImgBase =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -19,14 +21,16 @@ export const DetailPage = () => {
       const res = await axios.get(url);
       // console.log("res", res);
       setPokemonDetail(res.data);
-    } catch {}
+    } catch {
+      setPokemonDetail(undefined);
+    }
   };
 
   useEffect(() => {
     getPokemon();
   }, [pokemon]);
 
-  return (
+  return pokemonDetail ? (
     <div className="detailPokemon">
       <img src={normalUrlImg} height="60em" alt={normalUrlImg} />
       <div>
@@ -48,6 +52,11 @@ export const DetailPage = () => {
         </div>
       </div>
       <img src={shinyUrlImg} height="60em" alt={shinyUrlImg} />
+    </div>
+  ) : (
+    <div className="detailPokemon notFound">
+      <img src={urlPokemonNotFound} height="60em" alt={urlPokemonNotFound} />
+      <div>Pokemon not found</div>
     </div>
   );
 };

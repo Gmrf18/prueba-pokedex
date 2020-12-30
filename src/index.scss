@@ -26,11 +26,11 @@ code {
   gap: 3em;
   @include respond-to($tablet) {
     grid-template-columns: repeat(4, 2fr);
-    gap: 2em;
+    gap: 1.5em;
   }
   @include respond-to($landscape) {
     grid-template-columns: repeat(3, 2fr);
-    gap: 1.2em;
+    gap: 0.5em;
   }
 }
 

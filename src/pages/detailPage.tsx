@@ -16,7 +16,7 @@ export const DetailPage = () => {
   const shinyUrlImg = urlImgBase + "shiny/" + pokemonDetail?.id + ".png";
 
   const getPokemon = async () => {
-    const url = urlBase + pokemon;
+    const url = urlBase + pokemon.toLocaleLowerCase();
     try {
       const res = await axios.get(url);
       // console.log("res", res);

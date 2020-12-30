@@ -17,7 +17,7 @@ export const DetailPage = () => {
     const url = urlBase + pokemon;
     try {
       const res = await axios.get(url);
-      console.log("res", res);
+      // console.log("res", res);
       setPokemonDetail(res.data);
     } catch {}
   };

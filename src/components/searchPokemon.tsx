@@ -25,7 +25,7 @@ export const SearchPokemon = () => {
     <div className="searchPokemon">
       <input
         type="text"
-        placeholder="Introduce the name or number of pokemon"
+        placeholder="Enter the name or number of pokemon"
         onChange={changeValue}
         onKeyDown={onKeyDown}
       />

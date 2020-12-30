@@ -1,4 +1,3 @@
-import React from "react";
 import { useHistory } from "react-router-dom";
 
 export const SearchPokemon = () => {
@@ -14,12 +13,19 @@ export const SearchPokemon = () => {
     History.push(`/detail/${pokemon}`);
   };
 
+  const onKeyDown = (e: any) => {
+    if (e.key === "Enter") {
+      toDetail();
+    }
+  };
+
   return (
     <div className="searchPokemon">
       <input
         type="text"
         placeholder="Introduce the name or number of pokemon"
-        onBlur={changeValue}
+        onChange={changeValue}
+        onKeyDown={onKeyDown}
       />
       <button onClick={toDetail}>Send</button>
     </div>

@@ -9,6 +9,7 @@ export const NavbarPokemon: React.FC<Props> = ({ title }) => {
   return (
     <div className="navbar">
       <img
+        className="pokeball"
         onClick={() => {
           History.push("/home");
         }}

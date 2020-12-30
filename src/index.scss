@@ -42,8 +42,10 @@ code {
   background-color: $primary-color;
   color: white;
   display: grid;
+  padding: 0.12em;
   grid-template-columns: 4fr 1fr 4fr;
-  img {
+  .pokeball {
+    transform: rotate(-33deg);
     margin: 0 1em;
   }
 }

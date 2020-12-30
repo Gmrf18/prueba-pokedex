@@ -10,7 +10,9 @@ export const SearchPokemon = () => {
   };
 
   const toDetail = () => {
-    History.push(`/detail/${pokemon}`);
+    if (pokemon) {
+      History.push(`/detail/${pokemon}`);
+    }
   };
 
   const onKeyDown = (e: any) => {
